@@ -1,3 +1,21 @@
-.App {
+@import '../../scss/colors';
+@import '../../scss/variables';
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-roboto;
+}
+
+.page {
   text-align: center;
+  min-height: 100vh;
+  // background-color: $color-yellow;
+  background: linear-gradient(135deg, $color-black 2%, $color-yellow 2% 98%, $color-red 98%), linear-gradient(0deg, $color-black 2%, $color-yellow 2%);
+}
+
+.page__header {
+  padding: 20px 0;
 }

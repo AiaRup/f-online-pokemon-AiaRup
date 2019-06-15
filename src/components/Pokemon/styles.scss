@@ -1,0 +1,56 @@
+@import '../../scss/colors';
+
+.pokemon__card {
+  text-align: left;
+}
+
+.pokemon__header {
+  background-color: $color-grey-background;
+}
+
+.pokemon__image-container {
+  width: 100%;
+  height: 120px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.pokemon__image {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.pokemon__id {
+  color: $color-text-id;
+  background-color: $color-grey-id;
+  padding: 0 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.pokemon__main {
+  padding: 15px;
+}
+
+.pokemon__title {
+  text-transform: capitalize;
+  margin: 0 0 5px;
+}
+
+.pokemon__types {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pokemon__type {
+  display: inline-block;
+  margin-right: 10px;
+  border: 1px solid $color-grey-background;
+  color: $color-text-id;
+  border-radius: 8px;
+  padding: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+}

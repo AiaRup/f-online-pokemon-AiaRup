@@ -1,5 +1,6 @@
 import React from 'react';
 import Pokemon from '../Pokemon';
+import './styles.scss';
 
 export default function PokemonList({ pokemonList, filterBy }) {
   return (
