@@ -22,7 +22,7 @@ html {
   &::before {
     content: '';
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 0;
@@ -34,7 +34,7 @@ html {
   &::after {
     content: '';
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 0;
@@ -52,7 +52,7 @@ html {
   &::before {
     content: '';
     display: block;
-    position: absolute;
+    position: fixed;
     bottom: -150px;
     left: -150px;
     width: 0;
@@ -65,7 +65,7 @@ html {
   &::after {
     content: '';
     display: block;
-    position: absolute;
+    position: fixed;
     bottom: -150px;
     right: -150px;
     width: 0;
