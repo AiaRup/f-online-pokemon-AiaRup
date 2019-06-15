@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
 import './styles.scss';
 import { getPokemons } from '../../services/getPokemons';
-import Pokemon from '../Pokemon';
+import PokemonList from '../PokemonList';
+import Filter from '../Filter';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      pokemonList: []
+      pokemonList: [],
+      filterBy: ''
     };
     this.urlApi = 'https://pokeapi.co/api/v2/pokemon/?limit=25';
+    this.getUserValue = this.getUserValue.bind(this);
   }
 
   componentDidMount() {
     const localData = JSON.parse(localStorage.getItem('pokeList'));
     if (!localData) {
-      const promises = [];
       getPokemons(this.urlApi).then(data => {
-        for (const result of data.results) {
-          promises.push(getPokemons(result.url));
-        }
+        const promises = data.results.map(result => getPokemons(result.url));
         Promise.all(promises).then(responses => {
           const pokemons = [];
           for (const response of responses) {
@@ -35,19 +35,20 @@ class App extends Component {
     }
   }
 
+  getUserValue({ target: { value } }) {
+    this.setState({ filterBy: value });
+  }
+
   render() {
-    const { pokemonList } = this.state;
+    const { pokemonList, filterBy } = this.state;
     return (
       <div className="page">
-        <ul className="pokemon__list">
-          {pokemonList.map(pokemon => {
-            return (
-              <li className="pokemon__item" key={pokemon.id}>
-                <Pokemon pokemonData={pokemon} />
-              </li>
-            );
-          })}
-        </ul>
+        <header className="page__header">
+          <Filter filterBy={filterBy} getUserValue={this.getUserValue} />
+        </header>
+        <main className="page__main">
+          <PokemonList pokemonList={pokemonList} filterBy={filterBy} />
+        </main>
       </div>
     );
   }
