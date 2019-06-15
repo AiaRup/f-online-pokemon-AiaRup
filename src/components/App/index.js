@@ -43,12 +43,14 @@ class App extends Component {
     const { pokemonList, filterBy } = this.state;
     return (
       <div className="page">
-        <header className="page__header">
-          <Filter filterBy={filterBy} getUserValue={this.getUserValue} />
-        </header>
-        <main className="page__main">
-          <PokemonList pokemonList={pokemonList} filterBy={filterBy} />
-        </main>
+        <div className="page__wrapper">
+          <header className="page__header">
+            <Filter filterBy={filterBy} getUserValue={this.getUserValue} />
+          </header>
+          <main className="page__main">
+            <PokemonList pokemonList={pokemonList} filterBy={filterBy} />
+          </main>
+        </div>
       </div>
     );
   }
