@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './styles.scss';
 import { getPokemons } from '../../services/getPokemons';
 import PokemonList from '../PokemonList';
@@ -49,9 +49,19 @@ class App extends Component {
             <img src={ballImage} alt="pokemon ball" className="header__image" />
             <h1 className="page__title">PokeDex</h1>
           </header>
+
           <main className="page__main">
-            <Filter filterBy={filterBy} getUserValue={this.getUserValue} />
-            <PokemonList pokemonList={pokemonList} filterBy={filterBy} />
+            {pokemonList.length ? (
+              <Fragment>
+                <Filter filterBy={filterBy} getUserValue={this.getUserValue} />
+                <PokemonList pokemonList={pokemonList} filterBy={filterBy} />
+              </Fragment>
+            ) : (
+              <div className="loading__container">
+                <p className="loading__text">Loading...</p>
+                <img src={ballImage} alt="loading pokemons" className="loading__image" />
+              </div>
+            )}
           </main>
         </div>
       </div>

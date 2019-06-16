@@ -100,3 +100,27 @@ html {
   font-size: 45px;
   margin: 0;
 }
+
+.loading__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading__text {
+  margin-right: 20px;
+}
+
+.loading__image {
+  height: 80px;
+  animation: logo-spin infinite 5s linear;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
