@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "./static/css/main.3528e4c8.chunk.css",
-    "main.js": "./static/js/main.a71325f7.chunk.js",
-    "main.js.map": "./static/js/main.a71325f7.chunk.js.map",
+    "main.css": "./static/css/main.bd60bc39.chunk.css",
+    "main.js": "./static/js/main.1e176d42.chunk.js",
+    "main.js.map": "./static/js/main.1e176d42.chunk.js.map",
     "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
     "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
     "static/js/2.49afd6f5.chunk.js": "./static/js/2.49afd6f5.chunk.js",
     "static/js/2.49afd6f5.chunk.js.map": "./static/js/2.49afd6f5.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.44885dabb3743fa4a00bba6d220c30d5.js": "./precache-manifest.44885dabb3743fa4a00bba6d220c30d5.js",
+    "precache-manifest.2f4591ff2d24e1df3887cec9168b0f81.js": "./precache-manifest.2f4591ff2d24e1df3887cec9168b0f81.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.3528e4c8.chunk.css.map": "./static/css/main.3528e4c8.chunk.css.map",
+    "static/css/main.bd60bc39.chunk.css.map": "./static/css/main.bd60bc39.chunk.css.map",
     "static/media/styles.scss": "./static/media/Pokemon Hollow.6e5393a6.ttf",
     "static/media/pokemon-image.png": "./static/media/pokemon-image.15df305c.png"
   }
