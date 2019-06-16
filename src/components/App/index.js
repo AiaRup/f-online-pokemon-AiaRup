@@ -22,14 +22,16 @@ class App extends Component {
     if (!localData) {
       getPokemons(this.urlApi).then(data => {
         const promises = data.results.map(result => getPokemons(result.url));
-        Promise.all(promises).then(responses => {
-          const pokemons = [];
-          for (const response of responses) {
-            pokemons.push(response);
-          }
-          this.setState({ pokemonList: pokemons });
-          localStorage.setItem('pokeList', JSON.stringify(pokemons));
-        });
+        Promise.all(promises)
+          .then(responses => {
+            const pokemons = [];
+            for (const response of responses) {
+              pokemons.push(response);
+            }
+            this.setState({ pokemonList: pokemons });
+            localStorage.setItem('pokeList', JSON.stringify(pokemons));
+          })
+          .catch(error => console.log('error', error));
       });
     } else {
       this.setState({ pokemonList: localData });
