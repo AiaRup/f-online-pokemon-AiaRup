@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "./static/css/main.3528e4c8.chunk.css",
+    "main.js": "./static/js/main.a71325f7.chunk.js",
+    "main.js.map": "./static/js/main.a71325f7.chunk.js.map",
+    "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
+    "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
+    "static/js/2.49afd6f5.chunk.js": "./static/js/2.49afd6f5.chunk.js",
+    "static/js/2.49afd6f5.chunk.js.map": "./static/js/2.49afd6f5.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.de415b275517b6b196f8e0272766b9de.js": "./precache-manifest.de415b275517b6b196f8e0272766b9de.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.3528e4c8.chunk.css.map": "./static/css/main.3528e4c8.chunk.css.map",
+    "static/media/styles.scss": "./static/media/Pokemon Hollow.6e5393a6.ttf",
+    "static/media/pokemon-image.png": "./static/media/pokemon-image.15df305c.png"
+  }
+}
