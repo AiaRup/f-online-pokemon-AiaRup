@@ -1,8 +1,6 @@
 # POKEDEX
 
-![pokedex](docs/static/media/pokemon-image.15df305c.png){:class="img-responsive"}
-![pokedex](docs/static/media/pokemon-image.15df305c.png){:height="50%" width="50%"}
-![pokedex](docs/static/media/pokemon-image.15df305c.png){:height="700px" width="400px"}
+![pokedex](docs/static/media/pokemon-image.15df305c.png) <!-- .element height="50%" width="50%" -->
 
 This project is a SPA to consult the different types of pokemon and some features they have. You can filter the pokemons by their name. The API I used for this project is [PokeAPI](https://pokeapi.co/).
 
