@@ -1,6 +1,6 @@
 # POKEDEX
 
-![pokedex](docs/static/media/pokeball.png)
+![pokedex](docs/static/media/pokemon-image.png)
 
 This project is a SPA to consult the different types of pokemon and some features they have. You can filter the pokemons by their name. The API I used for this project is [PokeAPI](https://pokeapi.co/).
 
