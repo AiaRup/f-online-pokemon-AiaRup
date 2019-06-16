@@ -2,6 +2,11 @@
 @import '../../scss/variables';
 @import '../../scss/mixins';
 
+@font-face {
+  font-family: 'pokemon-hollow';
+  src: URL('../../fonts/Pokemon\ Hollow.ttf') format('truetype');
+}
+
 body,
 html {
   margin: 0;
@@ -58,6 +63,8 @@ html {
   }
 }
 
-.page__header {
-  padding: 20px 0;
+.page__title {
+  font-family: 'pokemon-hollow';
+  font-size: 45px;
+  margin-bottom: 0;
 }

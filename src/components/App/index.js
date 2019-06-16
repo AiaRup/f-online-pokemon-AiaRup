@@ -45,9 +45,10 @@ class App extends Component {
       <div className="page">
         <div className="page__wrapper">
           <header className="page__header">
-            <Filter filterBy={filterBy} getUserValue={this.getUserValue} />
+            <h1 className="page__title">PokeDex</h1>
           </header>
           <main className="page__main">
+            <Filter filterBy={filterBy} getUserValue={this.getUserValue} />
             <PokemonList pokemonList={pokemonList} filterBy={filterBy} />
           </main>
         </div>
