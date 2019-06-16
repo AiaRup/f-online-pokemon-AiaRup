@@ -1,5 +1,7 @@
 # POKEDEX
 
+![pokedex](docs/static/media/pokeball.png)
+
 This project is a SPA to consult the different types of pokemon and some features they have. You can filter the pokemons by their name. The API I used for this project is [PokeAPI](https://pokeapi.co/).
 
 ## Getting Started
@@ -38,6 +40,7 @@ Your app is ready to be deployed!
         |-PokemonList
     |-scss
     |-services
+    |-images
 ```
 
 ## Author
@@ -46,4 +49,4 @@ Your app is ready to be deployed!
 
 ## Acknowledgments
 
-- This project is part of the online training phase of [Adalab digital course](https://adalab.es/). This is the first test of the training, that lasts 7 weeks.
+This project is part of the online training phase of [Adalab digital course](https://adalab.es/). This is the first test of the training, that lasts 7 weeks.
