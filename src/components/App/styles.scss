@@ -29,15 +29,23 @@ html {
     @include cornerBackground;
     top: 0;
     left: 0;
-    border-width: 100px 100px 0 0;
+    border-width: 80px 80px 0 0;
     border-color: $color-black transparent transparent transparent;
   }
   &::after {
     @include cornerBackground;
     top: 0;
     right: 0;
-    border-width: 0 100px 100px 0;
+    border-width: 0 80px 80px 0;
     border-color: transparent $color-black transparent transparent;
+  }
+  @media all and (min-width: 550px) {
+    &::before {
+      border-width: 100px 100px 0 0;
+    }
+    &::after {
+      border-width: 0 100px 100px 0;
+    }
   }
 }
 
@@ -47,24 +55,48 @@ html {
   width: 100%;
   &::before {
     @include cornerBackground;
-    bottom: -150px;
-    left: -150px;
-    border-width: 0 0 300px 300px;
+    bottom: -100px;
+    left: -100px;
+    border-width: 0 0 200px 200px;
     border-color: transparent transparent $color-red transparent;
     border-radius: 50%;
   }
   &::after {
     @include cornerBackground;
-    bottom: -150px;
-    right: -150px;
-    border-width: 300px 0 0 300px;
+    bottom: -100px;
+    right: -100px;
+    border-width: 200px 0 0 200px;
     border-color: transparent transparent transparent $color-red;
     border-radius: 50%;
   }
+  @media all and (min-width: 768px) {
+    &::before {
+      border-width: 0 0 300px 300px;
+      bottom: -150px;
+      left: -150px;
+    }
+    &::after {
+      border-width: 300px 0 0 300px;
+      bottom: -150px;
+      right: -150px;
+    }
+  }
+}
+
+.page__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.header__image {
+  margin-right: 10px;
+  height: 80px;
 }
 
 .page__title {
   font-family: 'pokemon-hollow';
   font-size: 45px;
-  margin-bottom: 0;
+  margin: 0;
 }

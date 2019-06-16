@@ -41,6 +41,7 @@ Your app is ready to be deployed!
     |-scss
     |-services
     |-images
+    |-fonts
 ```
 
 ## Author

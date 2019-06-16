@@ -4,11 +4,24 @@
   margin: 0;
   padding: 0 0 30px;
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, 230px);
-  grid-gap: 2rem;
-  justify-content: center;
-  align-content: start;
+  @media all and (min-width: 550px) {
+    display: grid;
+    grid-template-columns: repeat(2, 230px);
+    grid-gap: 2rem;
+    justify-content: center;
+    align-content: start;
+  }
+  @media all and (min-width: 768px) {
+    grid-template-columns: repeat(3, 230px);
+    grid-gap: 1rem;
+  }
+  @media all and (min-width: 1100px) {
+    grid-template-columns: repeat(4, 230px);
+    grid-gap: 2rem;
+  }
+  @media all and (min-width: 1340px) {
+    grid-template-columns: repeat(5, 230px);
+  }
 }
 
 .pokemon__item {
@@ -17,4 +30,8 @@
   -moz-box-shadow: 0px 0px 13px -5px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 13px -5px rgba(0, 0, 0, 0.75);
   border: 1px solid $color-grey-id;
+  @media all and (max-width: 549px) {
+    max-width: 230px;
+    margin: 20px auto;
+  }
 }

@@ -4,6 +4,7 @@
 .page__form {
   padding: 30px 0;
 }
+
 .form__label {
   height: 0;
   width: 0;
@@ -15,7 +16,8 @@
 .form__input {
   padding: 15px;
   border: 0;
-  width: 30%;
+  width: 60%;
+  max-width: 700px;
   font-size: 18px;
   font-family: $font-noto;
   text-align: center;

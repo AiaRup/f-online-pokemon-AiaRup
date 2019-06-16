@@ -3,6 +3,7 @@ import './styles.scss';
 import { getPokemons } from '../../services/getPokemons';
 import PokemonList from '../PokemonList';
 import Filter from '../Filter';
+import ballImage from '../../images/pokemon-image.png';
 
 class App extends Component {
   constructor(props) {
@@ -45,6 +46,7 @@ class App extends Component {
       <div className="page">
         <div className="page__wrapper">
           <header className="page__header">
+            <img src={ballImage} alt="pokemon ball" className="header__image" />
             <h1 className="page__title">PokeDex</h1>
           </header>
           <main className="page__main">
