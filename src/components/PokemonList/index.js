@@ -1,6 +1,7 @@
 import React from 'react';
 import Pokemon from '../Pokemon';
 import './styles.scss';
+import { Link } from 'react-router-dom';
 
 export default function PokemonList({ pokemonList, filterBy }) {
   return (
@@ -10,7 +11,9 @@ export default function PokemonList({ pokemonList, filterBy }) {
         .map(pokemon => {
           return (
             <li className="pokemon__item" key={pokemon.id}>
-              <Pokemon pokemonData={pokemon} />
+              <Link to={`/pokemon/${pokemon.id}`} className="pokemon__link-page">
+                <Pokemon pokemonData={pokemon} />
+              </Link>
             </li>
           );
         })}

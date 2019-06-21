@@ -1,9 +1,10 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import './styles.scss';
 import { getPokemons } from '../../services/getPokemons';
-import PokemonList from '../PokemonList';
-import Filter from '../Filter';
-import ballImage from '../../images/pokemon-image.png';
+
+import { Route, Switch } from 'react-router-dom';
+import PokemonDetails from '../PokemonDetails';
+import Home from '../Home';
 
 class App extends Component {
   constructor(props) {
@@ -47,24 +48,10 @@ class App extends Component {
     return (
       <div className="page">
         <div className="page__wrapper">
-          <header className="page__header">
-            <img src={ballImage} alt="pokemon ball" className="header__image" />
-            <h1 className="page__title">PokeDex</h1>
-          </header>
-
-          <main className="page__main">
-            {pokemonList.length ? (
-              <Fragment>
-                <Filter filterBy={filterBy} getUserValue={this.getUserValue} />
-                <PokemonList pokemonList={pokemonList} filterBy={filterBy} />
-              </Fragment>
-            ) : (
-              <div className="loading__container">
-                <p className="loading__text">Loading...</p>
-                <img src={ballImage} alt="loading pokemons" className="loading__image" />
-              </div>
-            )}
-          </main>
+          <Switch>
+            <Route exact path="/" render={() => <Home filterBy={filterBy} pokemonList={pokemonList} getUserValue={this.getUserValue} />} />
+            <Route path="/pokemon/:id" render={routerProps => <PokemonDetails id={routerProps.match.params.id} pokemonList={pokemonList} />} />
+          </Switch>
         </div>
       </div>
     );
