@@ -61,3 +61,21 @@
   font-size: 12px;
   text-transform: uppercase;
 }
+
+.pokemon__evolution {
+  border-left: 4px solid $color-text-id;
+  padding-left: 4px;
+  margin: 10px 0 0;
+}
+.evolution__title,
+.evolution__name {
+  display: block;
+  color: $color-text-id;
+  font-size: 14px;
+}
+
+.evolution__name {
+  color: $color-black;
+  font-size: 22px;
+  text-transform: lowercase;
+}

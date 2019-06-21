@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
 
-export default function Pokemon({ pokemonData: { id, name, sprites, types } }) {
+export default function Pokemon({ pokemonData: { id, name, sprites, types, evolves_from_species } }) {
   return (
     <div className="pokemon__card">
       <div className="pokemon__header">
@@ -19,6 +19,12 @@ export default function Pokemon({ pokemonData: { id, name, sprites, types } }) {
             </li>
           ))}
         </ul>
+        {evolves_from_species ? (
+          <div className="pokemon__evolution">
+            <span className="evolution__title">Evoluciona de:</span>
+            <span className="evolution__name">{evolves_from_species.name}</span>
+          </div>
+        ) : null}
       </div>
     </div>
   );
