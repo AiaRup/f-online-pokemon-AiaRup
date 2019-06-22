@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import PokemonList from '../PokemonList';
 import Filter from '../Filter';
 import ballImage from '../../images/pokemon-image.png';
+import Loading from '../Loading';
 
 export default function Home({ filterBy, pokemonList, getUserValue }) {
   return (
@@ -18,10 +19,7 @@ export default function Home({ filterBy, pokemonList, getUserValue }) {
             <PokemonList pokemonList={pokemonList} filterBy={filterBy} />
           </Fragment>
         ) : (
-          <div className="loading__container">
-            <p className="loading__text">Loading...</p>
-            <img src={ballImage} alt="loading pokemons" className="loading__image" />
-          </div>
+          <Loading />
         )}
       </main>
     </Fragment>

@@ -1,16 +1,65 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import Loading from '../Loading';
+import './styles.scss';
+import { icons } from '../../utils/typeIcons';
 
 class PokemonDetails extends Component {
+  componentWillUnmount() {
+    this.props.clearFilter();
+  }
+
   render() {
-    const { id } = this.props;
+    const { id, pokemonList } = this.props;
+    const pokemon = pokemonList.find(item => item.id === parseInt(id));
     return (
-      <div>
-        pokemon details id {id}
-        <div>altura</div>
-        <div>peso</div>
-        <div>habilidades</div>
-        <div>imágenes del pokemon y sus evoluciones</div>
-      </div>
+      <Fragment>
+        {pokemonList.length ? (
+          <div className="pokemon__details-wrapper">
+            <div className="details__card">
+              <img src={pokemon.sprites.front_shiny} alt={pokemon.name} className="details__image" />
+              <h1 className="details__name" style={{ borderBottom: `4px solid ${pokemon.color.name}` }}>
+                {pokemon.name}
+              </h1>
+              <div className="pokemon__data-wrapper">
+                <div className="data__container">
+                  <span className="data__content">{pokemon.height / 10}m</span>
+                  <span className="data__type">height</span>
+                </div>
+                <div className="data__container">
+                  <span className="data__content-image">
+                    {pokemon.types.map(pokemonType => (
+                      <img className="type__image" src={icons[pokemonType.type.name]} alt={pokemonType.type.name} />
+                    ))}
+                  </span>
+                  {pokemon.types.map(pokemonType => (
+                    <span className="data__type">{pokemonType.type.name}</span>
+                  ))}
+                </div>
+                <div className="data__container">
+                  <span className="data__content">{pokemon.weight / 10}kg</span>
+                  <span className="data__type">weight</span>
+                </div>
+              </div>
+
+              <div>habitat {pokemon.habitat.name}</div>
+              <ul className="details__abilities">
+                {pokemon.abilities.map((abilityType, index) => (
+                  <li className="details__ability" key={index}>
+                    {abilityType.ability.name}
+                  </li>
+                ))}
+              </ul>
+              <div className="images__container">
+                <img src={pokemon.sprites.back_default} alt={pokemon.name} />
+                <img src={pokemon.sprites.back_shiny} alt={pokemon.name} />
+                <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <Loading />
+        )}
+      </Fragment>
     );
   }
 }

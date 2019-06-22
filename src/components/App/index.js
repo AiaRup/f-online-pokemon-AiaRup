@@ -17,6 +17,7 @@ class App extends Component {
       filterBy: ''
     };
     this.getUserValue = this.getUserValue.bind(this);
+    this.clearFilter = this.clearFilter.bind(this);
   }
 
   componentDidMount() {
@@ -57,6 +58,10 @@ class App extends Component {
     this.setState({ filterBy: value });
   }
 
+  clearFilter() {
+    this.setState({ filterBy: '' });
+  }
+
   render() {
     const { pokemonList, filterBy } = this.state;
     return (
@@ -64,7 +69,7 @@ class App extends Component {
         <div className="page__wrapper">
           <Switch>
             <Route exact path="/" render={() => <Home filterBy={filterBy} pokemonList={pokemonList} getUserValue={this.getUserValue} />} />
-            <Route path="/pokemon/:id" render={routerProps => <PokemonDetails id={routerProps.match.params.id} pokemonList={pokemonList} />} />
+            <Route path="/pokemon/:id" render={routerProps => <PokemonDetails id={routerProps.match.params.id} pokemonList={pokemonList} clearFilter={this.clearFilter} />} />
           </Switch>
         </div>
       </div>
