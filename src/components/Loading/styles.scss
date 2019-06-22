@@ -1,0 +1,23 @@
+@import '../../scss/mixins';
+
+.loading__container {
+  @include flexLayout(center, center);
+}
+
+.loading__text {
+  margin-right: 20px;
+}
+
+.loading__image {
+  height: 80px;
+  animation: logo-spin infinite 5s linear;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -3,6 +3,7 @@ import PokemonList from '../PokemonList';
 import Filter from '../Filter';
 import ballImage from '../../images/pokemon-image.png';
 import Loading from '../Loading';
+import './styles.scss';
 
 export default function Home({ filterBy, pokemonList, getUserValue }) {
   return (

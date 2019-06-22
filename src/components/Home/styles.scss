@@ -1,0 +1,17 @@
+@import '../../scss/mixins';
+
+.page__header {
+  @include flexLayout(center, center);
+  padding-top: 30px;
+}
+
+.header__image {
+  margin-right: 10px;
+  height: 80px;
+}
+
+.page__title {
+  font-family: 'pokemon-hollow';
+  font-size: 45px;
+  margin: 0;
+}

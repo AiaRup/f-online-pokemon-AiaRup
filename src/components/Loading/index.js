@@ -1,5 +1,6 @@
 import React from 'react';
 import ballImage from '../../images/pokemon-image.png';
+import './styles.scss';
 
 export default function Loading() {
   return (
