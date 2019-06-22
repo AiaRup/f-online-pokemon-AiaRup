@@ -31,9 +31,14 @@ class PokemonDetails extends Component {
                       <img className="type__image" src={icons[pokemonType.type.name]} alt={pokemonType.type.name} />
                     ))}
                   </span>
-                  {pokemon.types.map(pokemonType => (
-                    <span className="data__type">{pokemonType.type.name}</span>
-                  ))}
+                  <span className="data__content-types">
+                    {pokemon.types.map((pokemonType, index) => {
+                      if (index) {
+                        return <span className="data__type"> / {pokemonType.type.name}</span>;
+                      }
+                      return <span className="data__type">{pokemonType.type.name}</span>;
+                    })}
+                  </span>
                 </div>
                 <div className="data__container">
                   <span className="data__content">{pokemon.weight / 10}kg</span>
@@ -43,15 +48,32 @@ class PokemonDetails extends Component {
 
               <div>habitat {pokemon.habitat.name}</div>
               <ul className="details__abilities">
-                {pokemon.abilities.map((abilityType, index) => (
+                {pokemon.stats.map((abilityType, index) => (
                   <li className="details__ability" key={index}>
-                    {abilityType.ability.name}
+                    <div class="pie-wrapper pie-wrapper--solid progress-88">
+                      <span class="label">
+                        {abilityType.base_stat}
+                        <span class="smaller">%</span>
+                      </span>
+                    </div>
+                    {abilityType.stat.name}
                   </li>
                 ))}
               </ul>
+              {/* <ul className="details__abilities">
+                {pokemon.abilities.map((abilityType, index) => (
+                  <li className="details__ability" key={index}>
+                    <div class="pie-wrapper pie-wrapper--solid progress-88">
+                      <span class="label">
+                        88<span class="smaller">%</span>
+                      </span>
+                    </div>
+                    {abilityType.ability.name}
+                  </li>
+                ))}
+              </ul> */}
               <div className="images__container">
                 <img src={pokemon.sprites.back_default} alt={pokemon.name} />
-                <img src={pokemon.sprites.back_shiny} alt={pokemon.name} />
                 <img src={pokemon.sprites.front_default} alt={pokemon.name} />
               </div>
             </div>
