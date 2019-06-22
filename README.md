@@ -34,12 +34,17 @@ Your app is ready to be deployed!
     |-components
         |-App
         |-Filter
+        |-Home
+        |-Loading
         |-Pokemon
+        |-PokemonDetails
         |-PokemonList
     |-scss
     |-services
     |-images
+        |-Icons
     |-fonts
+    |-utils
 ```
 
 ## Author
