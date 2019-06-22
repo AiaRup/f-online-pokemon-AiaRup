@@ -1,6 +1,6 @@
 # POKEDEX
 
-This project is a SPA to consult the different types of pokemon and some features they have. You can filter the pokemons by their name. The API I used for this project is [PokeAPI](https://pokeapi.co/).
+This project is a SPA to consult the different types of pokemon and some features they have. You can filter the pokemons by their name and click on any Pokemon to go to its details page. The API I used for this project is [PokeAPI](https://pokeapi.co/).
 
 ## Getting Started
 

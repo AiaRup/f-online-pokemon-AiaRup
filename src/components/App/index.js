@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles.scss';
 import { getPokemons } from '../../services/getPokemons';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import PokemonDetails from '../PokemonDetails';
 import Home from '../Home';
 
@@ -68,8 +68,9 @@ class App extends Component {
       <div className="page">
         <div className="page__wrapper">
           <Switch>
-            <Route exact path="/" render={() => <Home filterBy={filterBy} pokemonList={pokemonList} getUserValue={this.getUserValue} />} />
-            <Route path="/pokemon/:id" render={routerProps => <PokemonDetails id={routerProps.match.params.id} pokemonList={pokemonList} clearFilter={this.clearFilter} />} />
+            <Route exact path="/home" render={() => <Home filterBy={filterBy} pokemonList={pokemonList} getUserValue={this.getUserValue} />} />
+            <Route exac path="/pokemon/:id" render={routerProps => <PokemonDetails id={routerProps.match.params.id} pokemonList={pokemonList} clearFilter={this.clearFilter} />} />
+            <Redirect from="/" to="/home" />
           </Switch>
         </div>
       </div>

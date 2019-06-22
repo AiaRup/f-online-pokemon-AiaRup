@@ -60,6 +60,7 @@ html {
     border-width: 0 0 200px 200px;
     border-color: transparent transparent $color-red transparent;
     border-radius: 50%;
+    z-index: 10;
   }
   &::after {
     @include cornerBackground;

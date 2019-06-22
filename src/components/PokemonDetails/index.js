@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import Loading from '../Loading';
 import './styles.scss';
 import { icons } from '../../utils/typeIcons';
+import { calculatePercentage } from '../../utils/paintCircle';
+import { Link } from 'react-router-dom';
 
 class PokemonDetails extends Component {
   componentWillUnmount() {
@@ -28,15 +30,23 @@ class PokemonDetails extends Component {
                 <div className="data__container">
                   <span className="data__content-image">
                     {pokemon.types.map(pokemonType => (
-                      <img className="type__image" src={icons[pokemonType.type.name]} alt={pokemonType.type.name} />
+                      <img className="type__image" src={icons[pokemonType.type.name]} alt={pokemonType.type.name} key={pokemonType.type.name} />
                     ))}
                   </span>
                   <span className="data__content-types">
                     {pokemon.types.map((pokemonType, index) => {
                       if (index) {
-                        return <span className="data__type"> / {pokemonType.type.name}</span>;
+                        return (
+                          <span className="data__type" key={pokemonType.type.name}>
+                            / {pokemonType.type.name}
+                          </span>
+                        );
                       }
-                      return <span className="data__type">{pokemonType.type.name}</span>;
+                      return (
+                        <span className="data__type" key={pokemonType.type.name}>
+                          {pokemonType.type.name}
+                        </span>
+                      );
                     })}
                   </span>
                 </div>
@@ -45,38 +55,29 @@ class PokemonDetails extends Component {
                   <span className="data__type">weight</span>
                 </div>
               </div>
-
-              <div>habitat {pokemon.habitat.name}</div>
-              <ul className="details__abilities">
+              <ul className="details__stats">
                 {pokemon.stats.map((abilityType, index) => (
-                  <li className="details__ability" key={index}>
-                    <div class="pie-wrapper pie-wrapper--solid progress-88">
-                      <span class="label">
-                        {abilityType.base_stat}
-                        <span class="smaller">%</span>
-                      </span>
+                  <li className="details__stat" key={index}>
+                    <div className="pie__border" style={{ backgroundImage: calculatePercentage(abilityType.base_stat) }}>
+                      <div className="pie__wrapper">
+                        <span className="stat__label">
+                          {abilityType.base_stat}
+                          <span className="stat__prec">%</span>
+                        </span>
+                      </div>
                     </div>
                     {abilityType.stat.name}
                   </li>
                 ))}
               </ul>
-              {/* <ul className="details__abilities">
-                {pokemon.abilities.map((abilityType, index) => (
-                  <li className="details__ability" key={index}>
-                    <div class="pie-wrapper pie-wrapper--solid progress-88">
-                      <span class="label">
-                        88<span class="smaller">%</span>
-                      </span>
-                    </div>
-                    {abilityType.ability.name}
-                  </li>
-                ))}
-              </ul> */}
               <div className="images__container">
                 <img src={pokemon.sprites.back_default} alt={pokemon.name} />
                 <img src={pokemon.sprites.front_default} alt={pokemon.name} />
               </div>
             </div>
+            <Link to="/home" className="button__back">
+              Go Back
+            </Link>
           </div>
         ) : (
           <Loading />

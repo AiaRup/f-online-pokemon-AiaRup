@@ -6,3 +6,9 @@
   height: 0;
   border-style: solid;
 }
+
+@mixin flexLayout($justify, $align) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
