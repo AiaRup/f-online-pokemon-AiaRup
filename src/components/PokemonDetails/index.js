@@ -4,6 +4,7 @@ import './styles.scss';
 import { icons } from '../../utils/typeIcons';
 import { calculatePercentage } from '../../utils/paintCircle';
 import { Link } from 'react-router-dom';
+import backIcon from '../../images/back-icon.png';
 
 class PokemonDetails extends Component {
   componentWillUnmount() {
@@ -76,7 +77,8 @@ class PokemonDetails extends Component {
               </div>
             </div>
             <Link to="/home" className="button__back">
-              Go Back
+              <img src={backIcon} alt="back icon" className="back__icon" />
+              go back
             </Link>
           </div>
         ) : (
