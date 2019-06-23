@@ -2,6 +2,7 @@ import React from 'react';
 import Pokemon from '../Pokemon';
 import './styles.scss';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export default function PokemonList({ pokemonList, filterBy }) {
   return (
@@ -20,3 +21,8 @@ export default function PokemonList({ pokemonList, filterBy }) {
     </ul>
   );
 }
+
+PokemonList.propTypes = {
+  filterBy: PropTypes.string,
+  pokemonList: PropTypes.arrayOf(PropTypes.object)
+};

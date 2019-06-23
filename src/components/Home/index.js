@@ -4,6 +4,7 @@ import Filter from '../Filter';
 import ballImage from '../../images/pokemon-image.png';
 import Loading from '../Loading';
 import './styles.scss';
+import PropTypes from 'prop-types';
 
 export default function Home({ filterBy, pokemonList, getUserValue }) {
   return (
@@ -26,3 +27,9 @@ export default function Home({ filterBy, pokemonList, getUserValue }) {
     </Fragment>
   );
 }
+
+Home.propTypes = {
+  filterBy: PropTypes.string,
+  getUserValue: PropTypes.func,
+  pokemonList: PropTypes.arrayOf(PropTypes.object)
+};

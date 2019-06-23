@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.scss';
+import PropTypes from 'prop-types';
 
 export default function Filter({ filterBy, getUserValue }) {
   return (
@@ -11,3 +12,8 @@ export default function Filter({ filterBy, getUserValue }) {
     </form>
   );
 }
+
+Filter.propTypes = {
+  filterBy: PropTypes.string,
+  getUserValue: PropTypes.func
+};

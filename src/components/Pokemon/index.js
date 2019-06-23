@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.scss';
+import PropTypes from 'prop-types';
 
 export default function Pokemon({ pokemonData: { id, name, sprites, types, evolves_from_species } }) {
   return (
@@ -29,3 +30,7 @@ export default function Pokemon({ pokemonData: { id, name, sprites, types, evolv
     </div>
   );
 }
+
+Pokemon.propTypes = {
+  pokemonData: PropTypes.object
+};
