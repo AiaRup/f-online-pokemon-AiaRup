@@ -11,7 +11,7 @@ import grass from '../images/icons/grass.png';
 import ground from '../images/icons/ground.png';
 import ice from '../images/icons/ice.png';
 import normal from '../images/icons/normal.png';
-import poison from '../images/icons/bug.png';
+import poison from '../images/icons/poison.png';
 import psycic from '../images/icons/psycic.png';
 import rock from '../images/icons/rock.png';
 import steel from '../images/icons/steel.png';

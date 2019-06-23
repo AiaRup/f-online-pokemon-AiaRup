@@ -4,6 +4,7 @@ import { getPokemons } from '../../services/getPokemons';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import PokemonDetails from '../PokemonDetails';
 import Home from '../Home';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const amountPokemons = 25;
 const urlApi = `https://pokeapi.co/api/v2/pokemon/?limit=${amountPokemons}`;
@@ -65,15 +66,23 @@ class App extends Component {
   render() {
     const { pokemonList, filterBy } = this.state;
     return (
-      <div className="page">
-        <div className="page__wrapper">
-          <Switch>
-            <Route exact path="/home" render={() => <Home filterBy={filterBy} pokemonList={pokemonList} getUserValue={this.getUserValue} />} />
-            <Route exac path="/pokemon/:id" render={routerProps => <PokemonDetails id={routerProps.match.params.id} pokemonList={pokemonList} clearFilter={this.clearFilter} />} />
-            <Redirect from="/" to="/home" />
-          </Switch>
-        </div>
-      </div>
+      <Route
+        render={({ location }) => (
+          <div className="page">
+            <div className="page__wrapper">
+              <TransitionGroup>
+                <CSSTransition timeout={1000} classNames="fade" key={location.key} unmountOnExit>
+                  <Switch location={location}>
+                    <Route exact path="/home" render={() => <Home filterBy={filterBy} pokemonList={pokemonList} getUserValue={this.getUserValue} />} />
+                    <Route exac path="/pokemon/:id" render={routerProps => <PokemonDetails id={routerProps.match.params.id} pokemonList={pokemonList} clearFilter={this.clearFilter} />} />
+                    <Redirect from="/" to="/home" />
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup>
+            </div>
+          </div>
+        )}
+      />
     );
   }
 }

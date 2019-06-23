@@ -16,7 +16,7 @@ class PokemonDetails extends Component {
     const pokemon = pokemonList.find(item => item.id === parseInt(id));
     return (
       <Fragment>
-        {pokemonList.length ? (
+        {pokemon ? (
           <div className="pokemon__details-wrapper">
             <div className="details__card">
               <img src={pokemon.sprites.front_shiny} alt={pokemon.name} className="details__image" />
