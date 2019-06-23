@@ -12,7 +12,6 @@ const urlApi = `https://pokeapi.co/api/v2/pokemon/?limit=${amountPokemons}`;
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       pokemonList: [],
       filterBy: ''
@@ -22,36 +21,30 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const localData = JSON.parse(localStorage.getItem('pokeList'));
-    if (!localData) {
-      getPokemons(urlApi)
-        .then(data => {
-          data.results.forEach(pokemon => {
-            getPokemons(pokemon.url).then(pokemon => {
-              let pokemonData = pokemon;
-              getPokemons(pokemon.species.url).then(moreData => {
-                pokemonData = { ...pokemonData, ...moreData };
-                this.setState(
-                  prevState => {
-                    return { pokemonList: [...prevState.pokemonList, pokemonData] };
-                  },
-                  () => this.orderAndSaveToLocal(this.state.pokemonList)
-                );
-              });
+    getPokemons(urlApi)
+      .then(data => {
+        data.results.forEach(pokemon => {
+          getPokemons(pokemon.url).then(pokemon => {
+            let pokemonData = pokemon;
+            getPokemons(pokemon.species.url).then(moreData => {
+              pokemonData = { ...pokemonData, ...moreData };
+              this.setState(
+                prevState => {
+                  return { pokemonList: [...prevState.pokemonList, pokemonData] };
+                },
+                () => this.orderAndSaveToLocal(this.state.pokemonList)
+              );
             });
           });
-        })
-        .catch(error => console.log('error', error));
-    } else {
-      this.setState({ pokemonList: localData });
-    }
+        });
+      })
+      .catch(error => console.log('error', error));
   }
 
   orderAndSaveToLocal(array) {
     if (array.length === amountPokemons) {
       array.sort((pokemonA, pokemonB) => pokemonA.id - pokemonB.id);
       this.setState({ pokemonList: array });
-      localStorage.setItem('pokeList', JSON.stringify(array));
     }
   }
 
