@@ -94,7 +94,7 @@ html {
 .fade-enter.fade-enter-active {
   opacity: 1;
   transform: scale(1);
-  transition: opacity 1000ms, transform 1000ms;
+  transition: opacity 300ms, transform 300ms;
 }
 
 .fade-exit {
@@ -105,5 +105,5 @@ html {
 .fade-exit.fade-exit-active {
   opacity: 0.01;
   transform: scale(0.9);
-  transition: opacity 1000ms, transform 1000ms;
+  transition: opacity 300ms, transform 300ms;
 }

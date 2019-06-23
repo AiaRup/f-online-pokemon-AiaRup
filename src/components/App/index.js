@@ -71,7 +71,7 @@ class App extends Component {
           <div className="page">
             <div className="page__wrapper">
               <TransitionGroup>
-                <CSSTransition timeout={1000} classNames="fade" key={location.key} unmountOnExit>
+                <CSSTransition timeout={300} classNames="fade" key={location.key} unmountOnExit>
                   <Switch location={location}>
                     <Route exact path="/home" render={() => <Home filterBy={filterBy} pokemonList={pokemonList} getUserValue={this.getUserValue} />} />
                     <Route exac path="/pokemon/:id" render={routerProps => <PokemonDetails id={routerProps.match.params.id} pokemonList={pokemonList} clearFilter={this.clearFilter} />} />
